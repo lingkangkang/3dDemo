@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #window{
+            -webkit-perspective: 800px;  //主窗口距离屏幕的位置
+            -webkit-perspective-origin: 50% 50%; //眼睛的角度-
+
+        }
+
+        #div1{
+            width:200px;
+            height: 200px;
+            background: darkred;
+            /*background-size: 600px 1000px;*/
+            transform-origin: center;
+            transform: rotateX(0deg);
+            animation: div1 10s linear ;
+            position: absolute;
+
+        }
+        #div2{
+            width:200px;
+            height: 200px;
+            background:blue;
+            /*background-size: 600px 1000px;*/
+            transform-origin: center;
+            transform: rotateX(45deg);
+            animation: div2 10s linear ;
+            position: absolute;
+
+        }
+        #div3{
+            width:200px;
+            height: 200px;
+            background:yellow;
+            /*background-size: 600px 1000px;*/
+            transform-origin: center;
+            transform: rotateX(90deg);
+            animation: div3 10s linear ;
+            position: absolute;
+
+        }
+        #div4{
+            width:200px;
+            height: 200px;
+            background:black;
+            /*background-size: 600px 1000px;*/
+            transform-origin: center;
+            transform: rotateX(135deg);
+            animation: div4 10s linear ;
+            position: absolute;
+
+        }
+        @keyframes div1 {
+            from{
+                transform: rotateX(0deg) ;
+            }
+            to{
+                transform: rotateX(0deg) ;
+            }
+        }
+        @keyframes div2 {
+            from{
+                transform: rotateX(0deg) ;
+            }
+            to{
+                transform: rotateX(45deg) ;
+            }
+        }
+        @keyframes div3 {
+            from{
+                transform: rotateX(0deg) ;
+            }
+            to{
+                transform: rotateX(90deg) ;
+            }
+        }
+        @keyframes div4 {
+            from{
+                transform: rotateX(0deg) ;
+            }
+            to{
+                transform: rotateX(135deg) ;
+            }
+        }
+        #body{
+            position: absolute;
+            /*margin-left: 300px;*/
+            /*top: 200px;*/
+            top: 25px;
+            left: 50px;
+            transform-style: preserve-3d;//设置窗口是3D属性
+            transform-origin: center;
+            animation: body  10s linear 10s  reverse infinite;
+            /*background: black;*/
+            width: 400px;
+            height: 400px;
+            transform: rotateY(90deg) ;
+            /*animation: body1 10s linear infinite 10s reverse;*/
+        }
+        @keyframes body {
+            0%{
+
+                transform: rotateX(0deg) ;
+            }
+            50%{
+
+                transform: rotateX(180deg)  ;
+            }
+            100%{
+                transform: rotateX(360deg);
+            }
+        }
+        #body1{
+            animation: body1 10s linear infinite 10s ;
+            transform-origin: center;
+            position: absolute;
+            margin-left: 100px;
+            /*background: deeppink;*/
+            width:400px;
+            height: 400px;
+            top: 200px;
+            left: 200px;
+        }
+        @keyframes body1 {
+            0%{
+                transform: rotate(0deg) ;
+            }
+            50%{
+                /*transform: translateZ(-10000px) ;*/
+            }
+            100%{
+                transform: rotate(360deg) ;
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="width: 100%;height: 100%;background: transparent;position: relative ;z-index: 1;"></div>
+<div id="window">
+    <div id="body1">
+    <div id="body">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
